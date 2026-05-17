@@ -1,0 +1,10 @@
+.env
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+*.json
+.pytest_cache/
+.ruff_cache/
+service-account.json
+logs/

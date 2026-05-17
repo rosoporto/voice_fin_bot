@@ -1,0 +1,32 @@
+[project]
+name = "voice-fin-bot"
+version = "0.1.0"
+description = "Telegram voice finance bot with OpenRouter, Google Sheets and Redis"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aiogram>=3.6,<4.0",
+    "gspread>=6.0,<7.0",
+    "google-auth>=2.29,<3.0",
+    "httpx>=0.27,<1.0",
+    "pydantic>=2.7,<3.0",
+    "pydantic-settings>=2.2,<3.0",
+    "redis>=5.0,<6.0",
+    "loguru>=0.7,<1.0",
+    "sqlalchemy>=2.0,<3.0",
+    "aiosqlite>=0.19,<1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["core", "handlers", "middlewares", "services"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
